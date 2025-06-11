@@ -1,19 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adoção de Animais</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-<h1>amem</h1>
-<a href="cadastro.html">apeta</a>
+        <h1>
+            <img src="fotos/Vj_quero_a_palavra_doe-pet_estilizada_com_as_letras__0e2b4ce2-5c4d-4d8a-8401-b20751ebdc5c.png" alt="Doe Pet" style="height:60px;">
+        </h1>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="cadastro.html" id="btn-cadastro">criar conta</a>
+            <a href="login.html" id="btn-login">entre</a>
+            <a href="perfil.html" id="btn-perfil" style="display:none;">perfil</a>
+            <a href="doe.html">doe</a>
+        </nav>
     </header>
+<br>
+<br>
+    <section id="animais">
+        <h2>Animais Disponíveis</h2>
+        <div>
+            <div>
+                <h3>Rex</h3>
+                <p>Cachorro, 2 anos, dócil e brincalhão.</p>
+                    <a href="adotar.html"> <button>Adotar</button></a>
+            </div>
+            <div>
+                <h3>Mimi</h3>
+                <p>Gata, 1 ano, carinhosa e tranquila.</p>
+                  <a href="adotar.html"> <button>Adotar</button></a>
+            </div>
+            <div>
+                <h3>Thor</h3>
+                <p>Cachorro, 3 anos, protetor e ativo.</p>
+                    <a href="adotar.html"> <button>Adotar</button></a>
+            </div>
+            <div class="animal-extra" style="display:none;">
+                <h3>Luna</h3>
+                <p>Gata, 4 meses, brincalhona e curiosa.</p>
+               <a href="adotar.html"> <button>Adotar</button></a>
+            </div>
+            <div class="animal-extra" style="display:none;">
+                <h3>Belinha</h3>
+                <p>Cachorra, 5 anos, calma e companheira.</p>
+               <a href="adotar.html"> <button>Adotar</button></a>
+            </div>
+        
+        </div>
+        <button id="mostrar-mais-animais" style="margin: 20px auto; display: block;">Mostrar mais animais</button>
+        <button id="mostrar-menos-animais" style="margin: 20px auto; display: none;">Mostrar menos</button>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma ONG dedicada a encontrar lares amorosos para animais resgatados.</p>
+    <a href="sobre.html">mais sobre</a>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: contato@adocaoanimais.com</p>
+        <p>Telefone: (11) 99999-9999</p>
+    </section>
 
 
 
+    <footer>
+        <p>&copy; 2025 Adoção de Animais</p>
+    </footer>
 
-
+    <script>
+        // Mostra o botão perfil e esconde cadastro/login se estiver logado
+        if (localStorage.getItem("perfil_email")) {
+            document.getElementById("btn-perfil").style.display = "inline";
+            document.getElementById("btn-cadastro").style.display = "none";
+            document.getElementById("btn-login").style.display = "none";
+        }
+    </script>
 </body>
 </html>

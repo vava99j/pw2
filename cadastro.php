@@ -32,9 +32,11 @@ VALUES ('$email', '$nome', '$telefone', '$confirmar')";
 if (mysqli_query($conexao, $sql)) {
     header("Location: index.html");
     exit;
-} else {
-    echo "Erro: " . mysqli_error($conexao);
-}
+ } else {
+        echo "Erro: " . mysqli_error($conexao);
+    }
+    
+
 
 
 mysqli_close($conexao);

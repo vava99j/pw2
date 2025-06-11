@@ -23,7 +23,8 @@
     </header> 
 
     <div class="container">
-        <h1>Cadastre-se</h1>
+        <h1>Erro no cadastro</h1>
+        <h1>tente novamente</h1>
         <form action="cadastro.php" method="POST">
             <h2>Qual seu email</h2>
             <input type="email" name="email" placeholder="qual seu email" required>
@@ -47,7 +48,7 @@
      <footer>
         <p>&copy; 2025 Adoção de Animais</p>
     </footer>
-    <script>
+     <script>
 document.querySelector("form").addEventListener("submit", function(e) {
     localStorage.setItem("perfil_nome", document.querySelector('input[name="nome"]').value);
     localStorage.setItem("perfil_email", document.querySelector('input[name="email"]').value);

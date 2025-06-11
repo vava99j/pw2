@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #f7f3ef;
+            color: #3e2723;
+            font-family: Arial, sans-serif;
+            padding-top: 120px;
+        }
+
+        .container {
+            background: #fff;
+            max-width: 400px;
+            margin: 40px auto 0 auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(101,67,33,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .container h1 {
+            color: #6d4c23;
+            font-size: 2rem;
+            margin-bottom: 18px;
+            text-align: center;
+            background: none;
+            padding: 0;
+        }
+
+        .container h2 {
+            font-size: 1.1rem;
+            margin: 12px 0 6px 0;
+            color: #3e2723;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 6px;
+            border: 1px solid #bca18a;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: #f7f3ef;
+            color: #3e2723;
+            transition: border 0.2s;
+        }
+
+        .container input[type="text"]:focus,
+        .container input[type="password"]:focus {
+            border: 1.5px solid #6d4c23;
+            outline: none;
+        }
+
+        .container button {
+            background: #6d4c23;
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 18px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .container button:hover {
+            background: #3e2723;
+        }
+
+        #alert {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #b71c1c;
+            min-height: 24px;
+        }
+
+        /* Para estilizar o campo de descrição e o campo de foto do animal */
+
+        /* Estilo para o campo de descrição */
+        #descriçao {
+            min-height: 60px;
+            resize: vertical;
+            font-size: 1rem;
+            padding: 10px;
+            border: 1px solid #bca18a;
+            border-radius: 5px;
+            background: #f7f3ef;
+            color: #3e2723;
+            margin-bottom: 12px;
+            transition: border 0.2s;
+        }
+
+        #descriçao:focus {
+            border: 1.5px solid #6d4c23;
+            outline: none;
+        }
+
+        /* Estilo para o campo de foto do animal */
+        #fotoanimal {
+            padding: 8px 0;
+            background: #f7f3ef;
+            border: none;
+            color: #3e2723;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        #fotoanimal::-webkit-file-upload-button {
+            background: #6d4c23;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #fotoanimal:hover::-webkit-file-upload-button {
+            background: #3e2723;
+        }
+
+        /* Para Firefox */
+        #fotoanimal::file-selector-button {
+            background: #6d4c23;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #fotoanimal:hover::file-selector-button {
+            background: #3e2723;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                max-width: 98vw;
+                padding: 16px 4vw 16px 4vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="fotos/Vj_quero_a_palavra_doe-pet_estilizada_com_as_letras__0e2b4ce2-5c4d-4d8a-8401-b20751ebdc5c.png" alt="Doe Pet" style="height:60px;">
+        </h1>
+        <nav>
+            <a href="sobre.html">Sobre</a>
+            <a href="criar_conta.html">cadastro</a>
+            <a href="login.html">login</a>
+            <a href="index.html">inicio</a>
+        </nav>
+    </header> 
+<br>
+<br>
+<br>
+    <div class="container" id="form-container">
+        <form action="doe.php" method="POST" enctype="multipart/form-data">
+            <h2>nome do animal</h2>
+            <input type="text" name="nome_pet" placeholder="nome do animal" required>
+
+            <h2>nome do responsável atual</h2>
+            <input type="text" name="nome_dono" placeholder="nome do responsável atual" required>
+
+            <h2>idade do animal</h2>
+            <input type="number" name="idade" placeholder="idade do animal" required>
+
+            <h2>tipo do animal</h2>
+            <input type="text" name="tipo" placeholder="tipo de animal" required>
+
+            <h2>descrição</h2>
+            <input type="text" name="descriçao" placeholder="descrição do animal" required>
+
+            <h2>foto do animal</h2>
+            <input type="file" name="foto_pet" accept="image/*" required>
+<br>
+            <button type="submit">doar</button>
+            <h3 id="alert"></h3>
+        </form>
+    </div>
+
+   <footer>
+        <p>&copy; 2025 Adoção de Animais</p>
+    </footer>
+</body>
+</html>

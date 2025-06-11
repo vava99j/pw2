@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adotar Animal</title>
+    <style>
+        body {
+            background: #f7f3ef;
+            color: #3e2723;
+            font-family: Arial, sans-serif;
+            padding-top: 80px;
+        }
+        .container {
+            background: #fff;
+            max-width: 500px;
+            margin: 40px auto 0 auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(101,67,33,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        h1 {
+            color: #6d4c23;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #6d4c23;
+            margin-top: 12px;
+        }
+        .info-value {
+            margin-bottom: 10px;
+        }
+        .animal-foto {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto 18px auto;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px rgba(101,67,33,0.10);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ficha do Animal para Adoção</h1>
+        <div>
+            <div class="info-label">Nome do animal:</div>
+            <div class="info-value" id="animal-nome"></div>
+            <div class="info-label">Tipo:</div>
+            <div class="info-value" id="animal-tipo"></div>
+            <div class="info-label">Idade:</div>
+            <div class="info-value" id="animal-idade"></div>
+            <div class="info-label">Descrição:</div>
+            <div class="info-value" id="animal-descricao"></div>
+            <img id="animal-foto" class="animal-foto" src="" alt="Foto do animal" style="display:none;">
+        </div>
+        <hr>
+        <h2>Informações do responsável</h2>
+        <div>
+            <div class="info-label">Nome do responsável:</div>
+            <div class="info-value" id="doador-nome"></div>
+            <div class="info-label">Email:</div>
+            <div class="info-value" id="doador-email"></div>
+            <div class="info-label">Telefone:</div>
+            <div class="info-value" id="doador-telefone"></div>
+        </div>
+    </div>
+  
+     <footer>
+        <p>&copy; 2025 Adoção de Animais</p>
+    </footer>
+</body>
+</html>
