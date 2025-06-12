@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "root", "pet");
+$conn = mysqli_connect("localhost", "root", "", "pet");
 
 
 if (!$conn) {
@@ -17,7 +17,10 @@ $result = mysqli_query($conn, $sql);
 
 
 if (mysqli_num_rows($result) > 0) {
-    header("Location: index.html");
+    // Após login/cadastro bem-sucedido
+    session_start();
+    $_SESSION['email'] = $email;
+    header("Location: index.php");
     exit;
 } else {
     header("Location: loginERRO.html");

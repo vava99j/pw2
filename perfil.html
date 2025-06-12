@@ -69,27 +69,6 @@
     <footer>
         <p>&copy; 2025 Adoção de Animais</p>
     </footer>
-    <script>
-const email = localStorage.getItem("perfil_email");
-if (email) {
-    fetch("perfil.php?email=" + encodeURIComponent(email))
-        .then(resp => resp.json())
-        .then(dados => {
-            if (dados.erro) {
-                document.getElementById("perfil-nome").textContent = "Erro!";
-                document.getElementById("perfil-email").textContent = email;
-                document.getElementById("perfil-telefone").textContent = "";
-            } else {
-                document.getElementById("perfil-nome").textContent = dados.nome;
-                document.getElementById("perfil-email").textContent = email;
-                document.getElementById("perfil-telefone").textContent = dados.telefone;
-            }
-        });
-}
-function logout() {
-    localStorage.clear();
-    window.location.href = "login.html";
-}
-</script>
+    
 </body>
 </html>

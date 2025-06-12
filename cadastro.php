@@ -2,7 +2,7 @@
 
 $servidor = "localhost";
 $usuario = "root";
-$senha = "root";
+$senha = "";
 $banco = "pet";
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
@@ -30,7 +30,7 @@ $sql = "INSERT INTO usuarios (email, nome, telefone, senha)
 VALUES ('$email', '$nome', '$telefone', '$confirmar')";
 
 if (mysqli_query($conexao, $sql)) {
-    header("Location: index.html");
+    header("Location: index.php");
     exit;
  } else {
         echo "Erro: " . mysqli_error($conexao);

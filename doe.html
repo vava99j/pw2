@@ -163,7 +163,7 @@
             <a href="sobre.html">Sobre</a>
             <a href="criar_conta.html">cadastro</a>
             <a href="login.html">login</a>
-            <a href="index.html">inicio</a>
+            <a href="index.php">inicio</a>
         </nav>
     </header> 
 <br>
@@ -174,8 +174,7 @@
             <h2>nome do animal</h2>
             <input type="text" name="nome_pet" placeholder="nome do animal" required>
 
-            <h2>nome do responsável atual</h2>
-            <input type="text" name="nome_dono" placeholder="nome do responsável atual" required>
+           
 
             <h2>idade do animal</h2>
             <input type="number" name="idade" placeholder="idade do animal" required>
@@ -197,5 +196,11 @@
    <footer>
         <p>&copy; 2025 Adoção de Animais</p>
     </footer>
+    <script>
+if (!localStorage.getItem("perfil_email")) {
+    alert("Login necessário");
+    window.location.href = "index.php";
+}
+</script>
 </body>
 </html>

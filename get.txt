@@ -1,0 +1,14 @@
+<?php
+class Usuario {
+    private $nome = "Maria"; // valor já definido na criação
+
+    // Método GET - obtém o valor de $nome
+    public function getNome() {
+        return $this->nome;
+    }
+}
+
+// Criando objeto e acessando com get
+$usuario = new Usuario();
+echo "O nome do usuário é: " . $usuario->getNome();
+?>
