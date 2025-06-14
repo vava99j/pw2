@@ -46,6 +46,7 @@ mysqli_close($conexao);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Meu Perfil</title>
+    <link rel="icon" type="image/png" href="fotos/favicon.png">
 </head>
 <body>
         <header>

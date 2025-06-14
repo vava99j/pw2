@@ -41,6 +41,7 @@ mysqli_close($conexao);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adotar Animal</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="fotos/favicon.png">
 </head>
 <body>
     <div class="container">
