@@ -34,11 +34,13 @@ $result = mysqli_query($conexao, $sql);
             <a href="#sobre">Sobre</a>
             <?php if (isset($_SESSION['email'])): ?>
                 <a href="perfil.php" id="btn-perfil">perfil</a>
+                   <a href="doe.html">doe</a>
             <?php else: ?>
                 <a href="cadastro.html" id="btn-cadastro">cadastro</a>
                 <a href="login.html" id="btn-login">entre</a>
+                 <a href="index.php"> login para doar</a>
             <?php endif; ?>
-            <a href="doe.html">doe</a>
+         
         </nav>
     </header>
 <br>

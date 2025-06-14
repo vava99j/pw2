@@ -55,8 +55,8 @@ mysqli_close($conexao);
         <nav>
             <a href="sobre.php">Sobre</a>
             <a href="index.php">inicio</a>
-            <a href="doe.php">doe</a>
-    
+            <a href="doe.html">doe</a>
+
         </nav>
     </header> 
     <div class="container">

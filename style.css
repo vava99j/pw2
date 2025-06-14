@@ -375,6 +375,16 @@ input[type="submit"]:hover,
     font-size: 0.98em;
 }
 
+/* Alinha textos e campos do formulário à esquerda */
+.container,
+.container h1,
+.container h2,
+.container label,
+.container input,
+.container p {
+    text-align: left;
+}
+
 /* Estilização especial para o campo de idade */
 .input-idade {
     padding: 10px;
