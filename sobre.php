@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +15,7 @@
         </h1>
         <nav>
             <a href="index.php">inicio</a>
-            <a href="criar_conta.html">cadastro</a>
-            <a href="login.html">login</a>
-            <a href="doe.html">doe</a>
+           
         </nav>
     </header> 
     </header>
@@ -32,7 +31,7 @@ somos um grupo de pessoas que acredita que todo bichinho merece um lar de verdad
     </main>
 
     <footer>
-        <p>&copy; 2025 Doe Pet. Todos os direitos reservados.</p>
+        <p>&copy; doe-pet 2025</p>
     </footer>
 </body>
 </html>

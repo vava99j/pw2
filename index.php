@@ -35,7 +35,7 @@ $result = mysqli_query($conexao, $sql);
             <?php if (isset($_SESSION['email'])): ?>
                 <a href="perfil.php" id="btn-perfil">perfil</a>
             <?php else: ?>
-                <a href="cadastro.html" id="btn-cadastro">criar conta</a>
+                <a href="cadastro.html" id="btn-cadastro">cadastro</a>
                 <a href="login.html" id="btn-login">entre</a>
             <?php endif; ?>
             <a href="doe.html">doe</a>
@@ -49,10 +49,10 @@ $result = mysqli_query($conexao, $sql);
             <?php while($row = mysqli_fetch_assoc($result)): ?>
                 <div class="ficha-animal" style="border:1px solid #ccc; padding:16px; width:220px; border-radius:8px; background:#fafafa;">
                     <?php if ($row['foto_pet']): ?>
-                        <img src="data:image/jpeg;base64,<?php echo base64_encode($row['foto_pet']); ?>" alt="Foto do animal" style="width:200px; height:200px; object-fit:cover; border-radius:8px;">
-                    <?php else: ?>
-                        <img src="fotos/sem-foto.jpg" alt="Sem foto" style="width:200px; height:200px; object-fit:cover; border-radius:8px;">
-                    <?php endif; ?>
+    <img src="data:image/jpeg;base64,<?= base64_encode($row['foto_pet']) ?>" alt="Foto do animal" style="width:200px; height:200px; object-fit:cover; border-radius:8px;">
+<?php else: ?>
+    <img src="fotos/sem-foto.jpg" alt="Sem foto" style="width:200px; height:200px; object-fit:cover; border-radius:8px;">
+<?php endif; ?>
                     <h3><?php echo htmlspecialchars($row['nome_pet']); ?></h3>
                     <p><?php echo nl2br(htmlspecialchars($row['descriçao'])); ?></p>
                     <a href="adotar.php?id_animal=<?php echo $row['id_animal']; ?>"><button>Adotar</button></a>
@@ -64,7 +64,7 @@ $result = mysqli_query($conexao, $sql);
     <section id="sobre">
         <h2>Sobre Nós</h2>
         <p>Somos uma ONG dedicada a encontrar lares amorosos para animais resgatados.</p>
-        <a href="sobre.html">mais sobre</a>
+        <a href="sobre.php">mais sobre</a>
     </section>
 
     <section id="contato">
@@ -74,9 +74,16 @@ $result = mysqli_query($conexao, $sql);
     </section>
 
     <footer>
-        <p>&copy; 2025 Adoção de Animais</p>
+        <p>&copy; doe-pet 2025</p>
     </footer>
 
 </body>
 </html>
 <?php mysqli_close($conexao); ?>
+<?php
+if (isset($_GET['status']) && $_GET['status'] === 'adotado') {
+    echo '<div class="alerta-sucesso" style="margin: 16px auto; max-width: 500px; background: #e0f7fa; color: #00695c; border: 1px solid #4dd0e1; border-radius: 6px; padding: 12px 18px; text-align: center; font-size: 1.1em;">
+    Animal adotado com sucesso!
+    </div>';
+}
+?>

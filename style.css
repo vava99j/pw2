@@ -8,10 +8,10 @@ body, h1, h2, h3, p, a, button {
 
 /* Corpo da página */
 body {
-    background: #f7f7f7;
-    color: #222;
-    padding-top: 100px;
+    background: #f7f3ef;
+    color: #3e2723;
     font-family: Arial, sans-serif;
+    padding-top: 120px;
 }
 
 /* Header */
@@ -150,19 +150,28 @@ footer {
     background: #256029 !important;
 }
 
+button,
+input[type="submit"],
+.container button,
 #btn-sair {
+    width: 100%;
+    border-radius: 0;      /* bordas retas */
+    box-shadow: none;      /* sem sombra extra */
+    padding: 14px 0;       /* altura confortável */
+    font-size: 1.1rem;
+    font-weight: bold;
     background: #6d4c23;
     color: #fff;
     border: none;
-    padding: 8px 18px;
-    border-radius: 5px;
-    font-size: 1em;
-    font-weight: bold;
-    margin-left: 10px;
+    margin-top: 14px;
     cursor: pointer;
     transition: background 0.2s;
+    letter-spacing: 1px;
 }
 
+button:hover,
+input[type="submit"]:hover,
+.container button:hover,
 #btn-sair:hover {
     background: #3e2723;
 }
@@ -184,9 +193,7 @@ footer {
     }
 }
 
-/* =========================
-   Estilização do campo email
-   ========================= */
+/* Campo email */
 #email {
     border: 2px solid #bca18a;
     border-radius: 6px;
@@ -219,7 +226,8 @@ footer {
     align-items: stretch;
 }
 
-.container h1 {
+.container h1,
+.container h2 {
     color: #6d4c23;
     font-size: 2rem;
     margin-bottom: 18px;
@@ -228,7 +236,7 @@ footer {
     padding: 0;
 }
 
-.container h2 {
+.container label {
     font-size: 1.1rem;
     margin: 12px 0 6px 0;
     color: #3e2723;
@@ -257,23 +265,6 @@ footer {
     outline: none;
 }
 
-.container input[type="submit"] {
-    background: #6d4c23;
-    color: #fff;
-    border: none;
-    padding: 12px 0;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-top: 18px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.container input[type="submit"]:hover {
-    background: #3e2723;
-}
-
 #alert {
     margin-top: 18px;
     text-align: center;
@@ -300,3 +291,184 @@ footer {
     border-radius: 8px;
     box-shadow: 0 1px 6px rgba(101,67,33,0.10);
 }
+
+/* Campo descrição */
+#descriçao {
+    min-height: 60px;
+    resize: vertical;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #bca18a;
+    border-radius: 5px;
+    background: #f7f3ef;
+    color: #3e2723;
+    margin-bottom: 12px;
+    transition: border 0.2s;
+}
+
+#descriçao:focus {
+    border: 1.5px solid #6d4c23;
+    outline: none;
+}
+
+/* Campo foto do animal */
+#fotoanimal {
+    padding: 8px 0;
+    background: #f7f3ef;
+    border: none;
+    color: #3e2723;
+    margin-bottom: 18px;
+    font-size: 1rem;
+}
+
+#fotoanimal::-webkit-file-upload-button {
+    background: #6d4c23;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#fotoanimal:hover::-webkit-file-upload-button {
+    background: #3e2723;
+}
+
+/* Para Firefox */
+#fotoanimal::file-selector-button {
+    background: #6d4c23;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#fotoanimal:hover::file-selector-button {
+    background: #3e2723;
+}
+
+.texto-fraco {
+    color: #aaa; /* ou #888, #bca18a, etc */
+}
+
+#form-container,
+#form-container h2,
+#form-container label,
+#form-container input,
+#form-container p,
+#form-container .texto-fraco {
+    text-align: left;
+}
+
+#form-container h2 {
+    margin-bottom: 2px;
+}
+
+#form-container .texto-fraco {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 0.98em;
+}
+
+/* Estilização especial para o campo de idade */
+.input-idade {
+    padding: 10px;
+    border: 1px solid #bca18a;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #f7f3ef;
+    color: #3e2723;
+    margin-bottom: 12px;
+    transition: border 0.2s;
+    width: 180px; /* Mantém o tamanho atual, ajuste se quiser mais largo/estreito */
+    box-sizing: border-box;
+    display: block;
+}
+.input-idade:focus {
+    border: 1.5px solid #6d4c23;
+    outline: none;
+}
+
+/* Estilização para o select de tipo de animal */
+#tipo-animal {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bca18a;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #f7f3ef;
+    color: #3e2723;
+    margin-bottom: 12px;
+    transition: border 0.2s;
+    box-sizing: border-box;
+    appearance: none; /* Remove o estilo padrão do sistema */
+}
+
+#tipo-animal:focus {
+    border: 1.5px solid #6d4c23;
+    outline: none;
+}
+
+ body {
+            background: #f7f3ef;
+            color: #3e2723;
+            font-family: Arial, sans-serif;
+            padding-top: 80px;
+        }
+        .container {
+            background: #fff;
+            max-width: 400px;
+            margin: 40px auto 0 auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(101,67,33,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        h1 {
+            color: #6d4c23;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #6d4c23;
+            margin-top: 12px;
+        }
+        .info-value {
+            margin-bottom: 10px;
+        }
+        #btn-sair {
+            background: #6d4c23;
+            color: #fff;
+            border: none;
+            padding: 10px 0;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 24px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #btn-sair:hover {
+            background: #3e2723;
+        }
+        .ficha-animal {
+            border: 1px solid #ccc;
+            padding: 16px;
+            width: 220px;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        .ficha-animal img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
