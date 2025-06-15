@@ -53,7 +53,7 @@ mysqli_close($conexao);
             <div class="info-label">Tipo:</div>
             <div class="info-value"><?= htmlspecialchars($animal['tipo']) ?></div>
             <div class="info-label">Contato:</div>
-            <div class="info-value"><?= htmlspecialchars($animal['contato']) ?></div>
+           <a href="tel:<?= htmlspecialchars($animal['contato']) ?>"><div class="info-value"><?= htmlspecialchars($animal['contato']) ?></div></a>
             <div class="info-label">Endereço:</div>
             <div class="info-value"><?= htmlspecialchars($animal['endereço']) ?></div>
             <div class="info-label">Idade:</div>

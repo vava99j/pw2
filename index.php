@@ -72,7 +72,7 @@ $result = mysqli_query($conexao, $sql);
     </section>
 
     <section id="contato">
-        <h2>Contato</h2>
+        <h2>SAC Doe-pet</h2>
       <a href="mailto:doepetcontact@gmail.com">E-mail </a> <br>
         <a href="tel:+55 11949371157">WhatsApp</a>
     </section>
