@@ -13,7 +13,7 @@ if (!$conexao) {
     die("Falha na conexão: " . mysqli_connect_error());
 }
 
-// Usa o email da sessão para buscar os dados do usuário logado
+// usa o email da sessão para buscar os dados do usuário logado
 $email = $_SESSION['email'] ?? '';
 
 $nome = '';
@@ -33,7 +33,7 @@ mysqli_close($conexao);
 
 
 
-// Garante que só usuários logados possam doar
+// garante que só usuários logados doam
 if (!isset($_SESSION['email'])) {
     header("Location: login.html");
     exit;
@@ -77,14 +77,14 @@ if (isset($_FILES['foto_pet']) && $_FILES['foto_pet']['error'] == 0) {
     $foto_pet = file_get_contents($_FILES['foto_pet']['tmp_name']);
 }
 
-// Validação simples (você pode melhorar)
+//confirmação 
 if (!$nome_pet || !$tipo || !$idade || !$descriçao || !$foto_pet || !$contato || !$endereço) {
     echo "Preencha todos os campos!";
     mysqli_close($conexao);
     exit;
 }
 
-// Insere o animal com endereço e contato
+// cadastra o animal 
 $sql = "INSERT INTO animal (nome_pet, tipo, idade, descriçao, foto_pet, contato, endereço) VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = mysqli_prepare($conexao, $sql);
 mysqli_stmt_bind_param($stmt, "ssissss", $nome_pet, $tipo, $idade, $descriçao, $foto_pet, $contato, $endereco_completo);
