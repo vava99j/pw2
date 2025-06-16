@@ -1,5 +1,5 @@
 <?php
-session_start(); // Adicione esta linha no início do arquivo
+session_start(); 
 
 $servidor = "localhost";
 $usuario = "root";
