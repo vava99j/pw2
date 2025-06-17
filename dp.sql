@@ -6,12 +6,13 @@ create table usuarios (
     id int auto_increment primary key,
     email varchar(100) not null unique,
     nome varchar(100) not null,
+    foto_user longblob,
     telefone varchar(20) not null,
     senha varchar(255) not null
 );
-   ALTER TABLE usuarios ADD COLUMN foto_user longblob;
+   
    describe usuarios;
-    ALTER TABLE usuarios DROP COLUMN contato;
+  
 select*from usuarios;
 
 create table animal (
@@ -19,22 +20,15 @@ create table animal (
     nome_pet varchar(100) not null,
     tipo varchar(50),
     idade int,
+    contato VARCHAR(50),
     descriçao text,
+    endereço VARCHAR(100),
     foto_pet longblob
 );
-   ALTER TABLE animal ADD COLUMN contato VARCHAR(50);
-     ALTER TABLE animal ADD COLUMN endereço VARCHAR(50);
-ALTER TABLE animal ADD COLUMN idade INT;
+
+
    select*from animal;
-   SET SQL_SAFE_UPDATES = 0;
-   delete from animal;
    DESCRIBE animal;
-   ALTER TABLE animal DROP COLUMN id_usuario;
-   SHOW CREATE TABLE animal;
-   ALTER TABLE animal MODIFY foto_pet LONGBLOB;
-   ALTER TABLE animal DROP FOREIGN KEY animal_ibfk_1;
-   ALTER TABLE animal DROP COLUMN id_usuario;
-   DELETE FROM animal WHERE id_animal = 7;
    
    
 SELECT 
