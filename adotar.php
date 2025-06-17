@@ -44,6 +44,15 @@ mysqli_close($conexao);
     <link rel="icon" type="image/png" href="fotos/favicon.png">
 </head>
 <body>
+      <header>
+        <h1>
+            <img src="fotos/Vj_quero_a_palavra_doe-pet_estilizada_com_as_letras__0e2b4ce2-5c4d-4d8a-8401-b20751ebdc5c.png" alt="Doe Pet" style="height:60px;">
+        </h1>
+        <nav>
+            <a href="index.php">inicio</a>
+           
+        </nav>
+    </header> 
     <div class="container">
         <h1>Ficha do Animal para Adoção</h1>
         <?php if ($animal): ?>
