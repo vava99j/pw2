@@ -1,103 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="fotos/favicon.png">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doe Pet - Cadastro</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="fotos/favicon.png" />
 </head>
 <body>
     <header>
         <h1>
-            <img src="fotos/Vj_quero_a_palavra_doe-pet_estilizada_com_as_letras__0e2b4ce2-5c4d-4d8a-8401-b20751ebdc5c.png" alt="Doe Pet" style="height:60px;">
+            <img src="fotos/Vj_quero_a_palavra_doe-pet_estilizada_com_as_letras__0e2b4ce2-5c4d-4d8a-8401-b20751ebdc5c.png" alt="Doe Pet" style="height:60px;" />
         </h1>
         <nav>
             <a href="sobre.php">Sobre</a>
-            <a href="perfil.php">perfil</a>
-            <a href="index.php">inicio</a>
+            <a href="perfil.php">Perfil</a>
+            <a href="index.php">Início</a>
         </nav>
     </header> 
-<br>
-<br>
-<br>
+    <br /><br /><br />
     <div class="container" id="form-container">
         <form action="doe.php" method="POST" enctype="multipart/form-data">
-            <h2>nome do animal</h2>
-            <input type="text" name="nome_pet" placeholder="nome do animal" required>
+            <h2>Nome do animal</h2>
+            <input type="text" name="nome_pet" placeholder="Nome do animal" required />
 
-           
+            <h2>Idade do animal</h2>
+            <input type="number" name="idade" class="input-idade" placeholder="Idade do animal" required />
 
-            <h2>idade do animal</h2>
-            <input type="number" name="idade" class="input-idade" placeholder="idade do animal" required>
+            <h2>Tipo do animal</h2>
+            <select name="tipo" id="tipo-animal" required>
+                <option value="">Selecione</option>
+                <option value="Cachorro">Cachorro</option>
+                <option value="Gato">Gato</option>
+                <option value="Coelho">Coelho</option>
+                <option value="Ave">Ave</option>
+                <option value="Hamster">Hamster</option>
+                <option value="Peixe">Peixe</option>
+                <option value="Outro">Outro</option>
+            </select>
+            <input type="text" name="tipo_outro" id="tipo-outro" placeholder="Se outro, qual?" style="display:none;" />
+            <script>
+            document.getElementById('tipo-animal').addEventListener('change', function() {
+                document.getElementById('tipo-outro').style.display = this.value === 'Outro' ? 'block' : 'none';
+            });
+            </script>
 
-            <h2>tipo do animal</h2>
-<select name="tipo" id="tipo-animal" required>
-    <option value="">Selecione</option>
-    <option value="Cachorro">Cachorro</option>
-    <option value="Gato">Gato</option>
-    <option value="Coelho">Coelho</option>
-    <option value="Ave">Ave</option>
-    <option value="Hamster">Hamster</option>
-    <option value="Peixe">Peixe</option>
-    <option value="Outro">Outro</option>
-</select>
-<input type="text" name="tipo_outro" id="tipo-outro" placeholder="Se outro, qual?" style="display:none;">
-<script>
-document.getElementById('tipo-animal').addEventListener('change', function() {
-    document.getElementById('tipo-outro').style.display = this.value === 'Outro' ? 'block' : 'none';
-});
-</script>
+            <h2>Descrição</h2>
+            <!-- Corrigido o name para 'descricao' sem cedilha e acento para evitar problemas no PHP -->
+            <input type="text" name="descricao" placeholder="Descrição do animal" required />
 
-            <h2>descrição</h2>
-            <input type="text" name="descriçao" placeholder="descrição do animal" required>
+            <h2>Contato</h2>
+            <p class="texto-fraco">Telefone celular</p>
+            <input type="tel" name="contato" placeholder="Contato do dono" required />
 
-             <h2>contato</h2> <p class="texto-fraco">telefone celular</p>
-            <input type="tel" name="contato" placeholder="contato do dono" required>
+            <h2>CEP</h2>
+            <input type="text" name="cep" id="cep" placeholder="CEP do animal" maxlength="9" required />
 
-           <h2>CEP</h2>
-<input type="text" name="cep" id="cep" placeholder="CEP do animal" maxlength="9" required>
+            <h2>Endereço</h2>
+            <!-- Corrigido o name para 'endereco' sem acento -->
+            <input type="text" name="endereco" id="endereco" placeholder="Endereço do animal" required />
 
-           <h2>Endereço</h2>
-            <input type="text" name="endereço" id="endereco" placeholder="Endereço do animal" required>
-     
-            <h2>foto do animal</h2>
-            <input type="file" name="foto_pet" id="fotoanimal" accept="image/*" required>
-<br>
-            <button type="submit">doar</button>
+            <h2>Foto do animal</h2>
+            <input type="file" name="foto_pet" id="fotoanimal" accept="image/*" required />
+            <br />
+            <button type="submit">Doar</button>
             <h3 id="alert"></h3>
         </form>
     </div>
 
-   <footer>
+    <footer>
         <p>&copy; doe-pet 2025</p>
     </footer>
+
     <script>
-if (!localStorage.getItem("perfil_email")) {
-    alert("Login necessário");
-    window.location.href = "index.php";
-}
-document.getElementById('cep').addEventListener('blur', function() {
-    const cep = this.value.replace(/\D/g, '');
-    if (cep.length === 8) {
-        fetch(`https://viacep.com.br/ws/${cep}/json/`)
-            .then(response => response.json())
-            .then(data => {
-                if (!data.erro) {
-                    // Preenche o campo endereço com rua, bairro, cidade e UF
-                    document.getElementById('endereco').value =
-                        (data.logradouro || '') +
-                        (data.bairro ? ', ' + data.bairro : '') +
-                        (data.localidade ? ' - ' + data.localidade : '') +
-                        (data.uf ? '/' + data.uf : '');
-                } else {
-                    alert('CEP não encontrado!');
-                }
-            })
-            .catch(() => alert('Erro ao buscar o CEP!'));
+    if (!localStorage.getItem("perfil_email")) {
+        alert("Login necessário");
+        window.location.href = "index.php";
     }
-});
-</script>
+    document.getElementById('cep').addEventListener('blur', function() {
+        const cep = this.value.replace(/\D/g, '');
+        if (cep.length === 8) {
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.erro) {
+                        // Preenche o campo endereço com rua, bairro, cidade e UF
+                        document.getElementById('endereco').value =
+                            (data.logradouro || '') +
+                            (data.bairro ? ', ' + data.bairro : '') +
+                            (data.localidade ? ' - ' + data.localidade : '') +
+                            (data.uf ? '/' + data.uf : '');
+                    } else {
+                        alert('CEP não encontrado!');
+                    }
+                })
+                .catch(() => alert('Erro ao buscar o CEP!'));
+        }
+    });
+    </script>
 </body>
 </html>
