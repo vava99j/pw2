@@ -7,7 +7,7 @@ if (!isset($_SESSION['email'])) {
 
 $servidor = "localhost";
 $usuario = "root";
-$senha = "root";
+$senha = "";
 $banco = "pet";
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
